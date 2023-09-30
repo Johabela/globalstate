@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import ApiTester from './ApiTester';
+import ConnectionContext, { defaultConnectionData } from './context/ConnectionContext';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*  */}
+      {/* Render or access the context data from the  child component ApiTester
+      it is child because it is inside Context */}
+      {/* bring data from connection */}
+      < ConnectionContext.Provider value ={defaultConnectionData}>
+        <ApiTester />
+      </ConnectionContext.Provider>
     </div>
   );
 }
